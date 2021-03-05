@@ -5,7 +5,8 @@ import {
   SearchOutlined,
   Twitter,
 } from '@material-ui/icons';
-import React from 'react';
+import AuthPopup from 'components/popups/AuthPopup';
+import React, { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -20,6 +21,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  descrSideWrapper: {
+    width: 380,
+    position: 'relative',
+    '& h6': {
+      color: theme.palette.secondary.light,
+      marginBottom: 16,
+    },
+    '& svg': {
+      color: theme.palette.secondary.light,
+      fontSize: 32,
+      marginRight: 15,
+    },
   },
   descrSideBackgroundIcon: {
     color: '#1EA2F1',
@@ -44,17 +58,10 @@ const useStyles = makeStyles((theme) => ({
   },
   loginSideWrapper: {
     width: 380,
-    position: 'relative',
-    '& h6': {
-      marginBottom: 20,
-      display: 'flex',
-      alignItems: 'center',
-    },
-    '& svg': {
-      color: '#ffffff',
-      fontSize: 32,
-      marginRight: 15,
-    },
+  },
+  loginDescr: {
+    fontWeight: 700,
+    marginBottom: 16,
   },
   loginSideTitle: {
     fontWeight: 700,
@@ -65,12 +72,23 @@ const useStyles = makeStyles((theme) => ({
 
 const SignIn = () => {
   const classes = useStyles();
+  const [showPopup, setShowPopup] = useState(false);
+  const [isRegister, setIsRegister] = useState(true);
+
+  const handleClick = (isRegister: boolean) => {
+    setIsRegister(isRegister);
+    setShowPopup(true);
+  };
+
+  const handleClose = () => {
+    setShowPopup(false);
+  };
 
   return (
     <div className={classes.wrapper}>
       <section className={classes.descrSide}>
         <Twitter color="primary" className={classes.descrSideBackgroundIcon} />
-        <div className={classes.loginSideWrapper}>
+        <div className={classes.descrSideWrapper}>
           <ul>
             <li>
               <Typography variant="h6" color="secondary">
@@ -99,22 +117,33 @@ const SignIn = () => {
           <Typography variant="h4" className={classes.loginSideTitle}>
             Узнайте, что происходит в мире сейчас
           </Typography>
-          <Typography gutterBottom>
-            <b>Присоединяйтесь к Твиттеру прямо сейчас!</b>
+          <Typography className={classes.loginDescr}>
+            Присоединяйтесь к Твиттеру прямо сейчас!
           </Typography>
           <Button
             style={{ marginBottom: 16 }}
             variant="contained"
             color="primary"
             fullWidth
+            onClick={() => handleClick(true)}
           >
             Зарегистрироваться
           </Button>
-          <Button variant="outlined" color="primary" fullWidth>
+          <Button
+            variant="outlined"
+            color="primary"
+            fullWidth
+            onClick={() => handleClick(false)}
+          >
             Войти
           </Button>
         </div>
       </section>
+      <AuthPopup
+        open={showPopup}
+        onClose={handleClose}
+        isRegister={isRegister}
+      />
     </div>
   );
 };

@@ -1,10 +1,14 @@
 export const themeOptions = {
   palette: {
     primary: {
+      light: '#6cd2ff',
       main: '#1DA1F2',
+      dark: '#0073bf',
     },
     secondary: {
-      main: '#ffffff',
+      light: '#ffffff',
+      main: '#274A9D',
+      dark: '#000000',
     },
     error: {
       main: '#EB7070',
@@ -17,9 +21,6 @@ export const themeOptions = {
     },
     hyperLink: {
       main: '#6A93D1',
-    },
-    accent: {
-      main: '#6769E0',
     },
     success: {
       main: '#499C47',
@@ -36,10 +37,10 @@ export const themeOptions = {
       disabled: '#CFD8E8',
     },
     button: {
-      default: '#6769E0',
-      hover: '#7B7DFF',
-      active: '#4D4FAF',
-      disabled: '#CFD8E8',
+      default: '#1DA1F2',
+      hover: '#6cd2ff',
+      active: '#0073bf',
+      disabled: '#8d888c6cd2ff',
     },
     tags: {
       error: '#FFEEEE',
@@ -59,6 +60,7 @@ export const themeOptions = {
         fontWeight: 600,
       },
       containedPrimary: {
+        backgroundColor: '#1DA1F2',
         color: '#ffffff',
       },
     },
