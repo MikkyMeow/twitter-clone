@@ -17,7 +17,7 @@ import {
   TurnedInNotOutlined,
   Twitter,
 } from '@material-ui/icons';
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -25,22 +25,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+interface INavItems {
+  label: string;
+  icon: JSX.Element;
+}
+
 const Nav = () => {
   const classes = useStyles();
 
+  const navItems: INavItems[] = useMemo(
+    () => [
+      { label: 'Home', icon: <HomeOutlined /> },
+      { label: 'Explore', icon: <Search /> },
+      { label: 'Notification', icon: <NotificationsNone /> },
+      { label: 'Messages', icon: <MailOutline /> },
+      { label: 'Bookmarks', icon: <TurnedInNotOutlined /> },
+      { label: 'Lists', icon: <Subject /> },
+      { label: 'Profiles', icon: <PermIdentity /> },
+      { label: 'More', icon: <MoreHoriz /> },
+    ],
+    []
+  );
+
   return (
-    <List component='nav'>
-      <ListItem button>
-        <ListItemIcon>
+    <List
+      component='nav'
+      subheader={
+        <IconButton>
           <Twitter />
-        </ListItemIcon>
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <HomeOutlined />
-        </ListItemIcon>
-        <ListItemText primary='Home' />
-      </ListItem>
+        </IconButton>
+      }
+    >
+      {navItems.map((item, index) => (
+        <ListItem key={index} button>
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          <ListItemText primary={item.label} />
+        </ListItem>
+      ))}
     </List>
   );
 };
