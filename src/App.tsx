@@ -1,7 +1,8 @@
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import React from 'react';
-import SignIn from 'components/pages/SignIn';
 import { themeOptions } from 'components/styles/themeOptions';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from 'router';
 
 function App() {
   const theme = createMuiTheme(themeOptions);
@@ -9,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <SignIn />
+        <Router>
+          <Routes />
+        </Router>
       </ThemeProvider>
     </div>
   );

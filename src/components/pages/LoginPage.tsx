@@ -6,7 +6,8 @@ import {
   Twitter,
 } from '@material-ui/icons';
 import AuthPopup from 'components/popups/AuthPopup';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation, Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -70,10 +71,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignIn = () => {
+const LoginPage = () => {
   const classes = useStyles();
   const [showPopup, setShowPopup] = useState(false);
   const [isRegister, setIsRegister] = useState(true);
+  const path = useLocation().pathname;
+
+  useEffect(() => {
+    if (path === '/register') {
+      setIsRegister(true);
+      setShowPopup(true);
+      return;
+    }
+    if (path === '/login') {
+      setIsRegister(false);
+      setShowPopup(true);
+      return;
+    }
+  }, [path]);
 
   const handleClick = (isRegister: boolean) => {
     setIsRegister(isRegister);
@@ -82,6 +97,7 @@ const SignIn = () => {
 
   const handleClose = () => {
     setShowPopup(false);
+    return <Redirect to="/" />;
   };
 
   return (
@@ -148,4 +164,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default LoginPage;

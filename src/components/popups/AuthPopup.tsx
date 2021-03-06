@@ -36,7 +36,7 @@ const AuthPopup: React.FC<IProps> = ({ open, onClose, isRegister = true }) => {
     <Dialog open={open} aria-labelledby="login-popup" onClose={onClose}>
       <div className={classes.root}>
         <DialogTitle className={classes.title} id="login-popup">
-          Войти в Твиттер
+          {isRegister ? 'Создайте учётную запись' : 'Войти в Твиттер'}
         </DialogTitle>
         <DialogContent>
           <TextField
