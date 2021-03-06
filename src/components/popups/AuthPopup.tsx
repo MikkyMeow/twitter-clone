@@ -33,42 +33,42 @@ const AuthPopup: React.FC<IProps> = ({ open, onClose, isRegister = true }) => {
   const classes = useStyles();
 
   return (
-    <Dialog open={open} aria-labelledby="login-popup" onClose={onClose}>
+    <Dialog open={open} aria-labelledby='login-popup' onClose={onClose}>
       <div className={classes.root}>
-        <DialogTitle className={classes.title} id="login-popup">
-          {isRegister ? 'Создайте учётную запись' : 'Войти в Твиттер'}
+        <DialogTitle className={classes.title} id='login-popup'>
+          {isRegister ? 'Create yout account' : 'Log In'}
         </DialogTitle>
         <DialogContent>
           <TextField
             className={classes.input}
             autoFocus
-            id="email"
-            label="Эл. почта"
-            type="email"
+            id='email'
+            label='E-mail'
+            type='email'
             fullWidth
           />
           <TextField
             className={classes.input}
-            id="password"
-            label="Пароль"
-            type="password"
+            id='password'
+            label='Password'
+            type='password'
             fullWidth
           />
           {isRegister && (
             <TextField
               className={classes.input}
-              id="repeat-password"
-              label="Повторите пароль"
-              type="password"
+              id='repeat-password'
+              label='Repeat password'
+              type='password'
               fullWidth
             />
           )}
         </DialogContent>
         <DialogActions>
-          <Button variant="outlined" color="primary" onClick={onClose}>
+          <Button variant='outlined' color='primary' onClick={onClose}>
             Отмена
           </Button>
-          <Button variant="contained" color="primary">
+          <Button variant='contained' color='primary'>
             Войти
           </Button>
         </DialogActions>

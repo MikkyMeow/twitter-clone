@@ -97,31 +97,31 @@ const LoginPage = () => {
 
   const handleClose = () => {
     setShowPopup(false);
-    return <Redirect to="/" />;
+    return <Redirect to='/' />;
   };
 
   return (
     <div className={classes.wrapper}>
       <section className={classes.descrSide}>
-        <Twitter color="primary" className={classes.descrSideBackgroundIcon} />
+        <Twitter color='primary' className={classes.descrSideBackgroundIcon} />
         <div className={classes.descrSideWrapper}>
           <ul>
             <li>
-              <Typography variant="h6" color="secondary">
+              <Typography variant='h6' color='secondary'>
                 <SearchOutlined />
-                Читайте о том, что вам интересно.
+                Follow your interests.
               </Typography>
             </li>
             <li>
-              <Typography variant="h6" color="secondary">
+              <Typography variant='h6' color='secondary'>
                 <PeopleOutline />
-                Узнайте, о чем говорят в мире.
+                Hear what people are talking about.
               </Typography>
             </li>
             <li>
-              <Typography variant="h6" color="secondary">
+              <Typography variant='h6' color='secondary'>
                 <ModeCommentOutlined />
-                Присоединяйтесь к общению.
+                Join the conservation.
               </Typography>
             </li>
           </ul>
@@ -129,29 +129,29 @@ const LoginPage = () => {
       </section>
       <section className={classes.loginSide}>
         <div className={classes.loginSideWrapper}>
-          <Twitter color="primary" className={classes.loginSideTwitterIcon} />
-          <Typography variant="h4" className={classes.loginSideTitle}>
-            Узнайте, что происходит в мире сейчас
+          <Twitter color='primary' className={classes.loginSideTwitterIcon} />
+          <Typography variant='h4' className={classes.loginSideTitle}>
+            See what's happening in the world right now
           </Typography>
           <Typography className={classes.loginDescr}>
-            Присоединяйтесь к Твиттеру прямо сейчас!
+            Join Twitter today.
           </Typography>
           <Button
             style={{ marginBottom: 16 }}
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
             fullWidth
             onClick={() => handleClick(true)}
           >
-            Зарегистрироваться
+            Sign Up
           </Button>
           <Button
-            variant="outlined"
-            color="primary"
+            variant='outlined'
+            color='primary'
             fullWidth
             onClick={() => handleClick(false)}
           >
-            Войти
+            Log In
           </Button>
         </div>
       </section>

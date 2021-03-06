@@ -1,4 +1,11 @@
-import { IconButton, makeStyles } from '@material-ui/core';
+import {
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  makeStyles,
+} from '@material-ui/core';
 import {
   HomeOutlined,
   MailOutline,
@@ -22,55 +29,19 @@ const Nav = () => {
   const classes = useStyles();
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <IconButton>
-            <Twitter className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <HomeOutlined className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <Search className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <NotificationsNone className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <MailOutline className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <TurnedInNotOutlined className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <Subject className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <PermIdentity className={classes.logo} />
-          </IconButton>
-        </li>
-        <li>
-          <IconButton>
-            <MoreHoriz className={classes.logo} />
-          </IconButton>
-        </li>
-      </ul>
-    </nav>
+    <List component='nav'>
+      <ListItem button>
+        <ListItemIcon>
+          <Twitter />
+        </ListItemIcon>
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <HomeOutlined />
+        </ListItemIcon>
+        <ListItemText primary='Home' />
+      </ListItem>
+    </List>
   );
 };
 
