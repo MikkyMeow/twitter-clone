@@ -18,7 +18,8 @@ import {
   Twitter,
 } from '@material-ui/icons';
 import React, { useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import classnames from 'classnames';
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
       height: 27,
       color: theme.palette.secondary.dark,
     },
+    '&.active svg': {
+      color: theme.palette.secondary.main,
+    },
   },
   navItemText: {
     fontSize: 24,
@@ -46,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   disabled: {
     color: theme.palette.secondary.dark,
+    pointerEvents: 'none',
   },
 }));
 
@@ -72,23 +77,23 @@ const Nav = () => {
       {
         label: 'Messages',
         icon: <MailOutline />,
-        to: '#',
+        to: '/messages',
         isDisabled: true,
       },
       {
         label: 'Bookmarks',
         icon: <TurnedInNotOutlined />,
-        to: '#',
+        to: '/bookmarks',
         isDisabled: true,
       },
-      { label: 'Lists', icon: <Subject />, to: '#', isDisabled: true },
+      { label: 'Lists', icon: <Subject />, to: '/lists', isDisabled: true },
       {
         label: 'Profile',
         icon: <PermIdentity />,
-        to: '#',
+        to: '/profile',
         isDisabled: true,
       },
-      { label: 'More', icon: <MoreHoriz />, to: '#', isDisabled: true },
+      { label: 'More', icon: <MoreHoriz />, to: '/more', isDisabled: true },
     ],
     []
   );
@@ -97,15 +102,20 @@ const Nav = () => {
     <List
       component='nav'
       subheader={
-        <IconButton className={classes.logo}>
-          <Twitter />
-        </IconButton>
+        <Link to='/home'>
+          <IconButton className={classes.logo}>
+            <Twitter />
+          </IconButton>
+        </Link>
       }
     >
       {navItems.map((item, index) => (
         <NavLink
           to={item.to}
-          className={classes.navItem}
+          className={classnames(
+            classes.navItem,
+            item.isDisabled && classes.disabled
+          )}
           activeStyle={{ color: '#274A9D' }}
         >
           <ListItem
