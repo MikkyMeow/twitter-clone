@@ -37,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
       height: 27,
       color: theme.palette.secondary.dark,
     },
-    '&.active svg': {
-      color: theme.palette.secondary.main,
-    },
   },
   navItemText: {
     fontSize: 24,
@@ -47,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     borderRadius: 30,
+    '&.MuiListItem-button:hover': {
+      backgroundColor: 'rgba(0,0,0,0)',
+    },
   },
   disabled: {
     color: theme.palette.secondary.dark,
