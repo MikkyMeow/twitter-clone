@@ -73,5 +73,9 @@ export const themeOptions = {
   typography: {
     fontFamily: 'Roboto, sans-serif',
     fontSize: 14,
+    h2: {
+      fontSize: 22,
+      fontWeight: 700,
+    },
   },
 };

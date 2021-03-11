@@ -1,4 +1,11 @@
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import {
+  Box,
+  Button,
+  List,
+  ListItem,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 import {
   ModeCommentOutlined,
   PeopleOutline,
@@ -101,34 +108,34 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={classes.wrapper}>
-      <section className={classes.descrSide}>
+    <Box className={classes.wrapper}>
+      <Box component='section' className={classes.descrSide}>
         <Twitter color='primary' className={classes.descrSideBackgroundIcon} />
-        <div className={classes.descrSideWrapper}>
-          <ul>
-            <li>
+        <Box className={classes.descrSideWrapper}>
+          <List>
+            <ListItem>
               <Typography variant='h6' color='secondary'>
                 <SearchOutlined />
                 Follow your interests.
               </Typography>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <Typography variant='h6' color='secondary'>
                 <PeopleOutline />
                 Hear what people are talking about.
               </Typography>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <Typography variant='h6' color='secondary'>
                 <ModeCommentOutlined />
                 Join the conservation.
               </Typography>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section className={classes.loginSide}>
-        <div className={classes.loginSideWrapper}>
+            </ListItem>
+          </List>
+        </Box>
+      </Box>
+      <Box component='section' className={classes.loginSide}>
+        <Box className={classes.loginSideWrapper}>
           <Twitter color='primary' className={classes.loginSideTwitterIcon} />
           <Typography variant='h4' className={classes.loginSideTitle}>
             See what's happening in the world right now
@@ -153,14 +160,14 @@ const LoginPage = () => {
           >
             Log In
           </Button>
-        </div>
-      </section>
+        </Box>
+      </Box>
       <AuthPopup
         open={showPopup}
         onClose={handleClose}
         isRegister={isRegister}
       />
-    </div>
+    </Box>
   );
 };
 

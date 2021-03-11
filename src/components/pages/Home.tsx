@@ -1,4 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core';
+import HomeSideBar from 'components/layouts/HomeSideBar';
 import Nav from 'components/layouts/Nav';
 import React from 'react';
 
@@ -21,7 +22,7 @@ const Home = () => {
         2
       </Grid>
       <Grid item xs={3}>
-        3
+        <HomeSideBar />
       </Grid>
     </Grid>
   );
