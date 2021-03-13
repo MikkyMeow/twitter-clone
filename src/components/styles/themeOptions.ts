@@ -27,7 +27,7 @@ export const themeOptions = {
     },
     text: {
       primary: '#1DA1F2',
-      secondary: '#9699B5',
+      secondary: '#5B7082',
       disabled: '#CFD8E8',
     },
     link: {

@@ -3,7 +3,15 @@ import { Dropdown } from 'components/ui/Dropdown';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    position: 'relative',
+    width: '100%',
+  },
+  dropdown: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+  },
 }));
 
 const TrendsItem = () => {
@@ -14,7 +22,7 @@ const TrendsItem = () => {
       <Typography color='textSecondary'>Trending In Russia</Typography>
       <Typography>#коточетверг</Typography>
       <Typography>141K Tweets</Typography>
-      <Dropdown className='png' />
+      <Dropdown className={classes.dropdown} />
     </Box>
   );
 };
