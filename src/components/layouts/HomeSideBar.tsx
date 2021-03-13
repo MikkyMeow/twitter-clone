@@ -11,7 +11,7 @@ import React from 'react';
 const useStyles = makeStyles((theme) => ({
   root: {},
   searchInput: {
-    background: '#C4CFD5',
+    background: '#EBEEF0',
     borderRadius: 30,
     color: '#3A4D5B',
     height: 44,

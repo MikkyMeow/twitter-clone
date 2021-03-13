@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     borderBottom: '1px solid #EBEEF0',
+    padding: `${theme.spacing(1.5)}px ${theme.spacing(2)}px`,
     '&:last-child': {
       borderBottom: 0,
       color: theme.palette.primary.main,

@@ -20,7 +20,7 @@ export const themeOptions = {
       main: '#566385',
     },
     hyperLink: {
-      main: '#6A93D1',
+      main: '#5B7082',
     },
     success: {
       main: '#499C47',
