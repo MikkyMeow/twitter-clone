@@ -29,7 +29,11 @@ interface IProps {
   isRegister?: boolean;
 }
 
-const AuthPopup: React.FC<IProps> = ({ open, onClose, isRegister = true }) => {
+export const AuthPopup: React.FC<IProps> = ({
+  open,
+  onClose,
+  isRegister = true,
+}) => {
   const classes = useStyles();
 
   return (
@@ -76,5 +80,3 @@ const AuthPopup: React.FC<IProps> = ({ open, onClose, isRegister = true }) => {
     </Dialog>
   );
 };
-
-export default AuthPopup;

@@ -12,7 +12,7 @@ import {
   SearchOutlined,
   Twitter,
 } from '@material-ui/icons';
-import AuthPopup from 'components/popups/AuthPopup';
+import { AuthPopup } from 'components/popups/AuthPopup';
 import React, { useEffect, useState } from 'react';
 import { useLocation, Redirect } from 'react-router-dom';
 
