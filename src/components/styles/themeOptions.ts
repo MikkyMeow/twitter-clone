@@ -40,7 +40,7 @@ export const themeOptions = {
       default: '#1DA1F2',
       hover: '#6cd2ff',
       active: '#0073bf',
-      disabled: '#8d888c6cd2ff',
+      disabled: '#EBEEF0',
     },
     tags: {
       error: '#FFEEEE',
