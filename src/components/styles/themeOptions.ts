@@ -19,34 +19,19 @@ export const themeOptions = {
     logo: {
       main: '#566385',
     },
-    hyperLink: {
-      main: '#5B7082',
-    },
     success: {
       main: '#499C47',
     },
     text: {
       primary: '#1DA1F2',
       secondary: '#5B7082',
-      disabled: '#CFD8E8',
+      disabled: '#000',
     },
     link: {
       default: '#6A93D1',
       hover: '#5A7EB5',
       active: '#83AFF2',
       disabled: '#CFD8E8',
-    },
-    button: {
-      default: '#1DA1F2',
-      hover: '#6cd2ff',
-      active: '#0073bf',
-      disabled: '#EBEEF0',
-    },
-    tags: {
-      error: '#FFEEEE',
-      success: '#E9FAEE',
-      waiting: '#E5EEFF',
-      draft: '#F0F4FB',
     },
   },
   shape: {
@@ -76,6 +61,10 @@ export const themeOptions = {
     h2: {
       fontSize: 22,
       fontWeight: 700,
+    },
+    h3: {
+      fontSize: 20,
+      fontWeight: 400,
     },
   },
 };
