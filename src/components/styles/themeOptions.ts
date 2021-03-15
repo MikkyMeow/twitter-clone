@@ -23,7 +23,7 @@ export const themeOptions = {
       main: '#499C47',
     },
     text: {
-      primary: '#1DA1F2',
+      primary: '#000',
       secondary: '#5B7082',
       disabled: '#000',
     },
@@ -65,6 +65,15 @@ export const themeOptions = {
     h3: {
       fontSize: 20,
       fontWeight: 400,
+    },
+    h4: {
+      fontSize: 20,
+      fontWeight: 700,
+    },
+    h5: {
+      fontSize: 20,
+      fontWeight: 400,
+      color: '#5B7082',
     },
   },
 };

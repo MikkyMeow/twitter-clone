@@ -4,8 +4,6 @@ import {
   Button,
   IconButton,
   Input,
-  List,
-  ListItem,
   makeStyles,
 } from '@material-ui/core';
 import {
@@ -28,20 +26,17 @@ const useStyles = makeStyles((theme) => ({
     height: 48,
     marginRight: theme.spacing(1.5),
   },
-  content: {
-    width: '100%',
-  },
   input: {
     fontSize: theme.typography.h3.fontSize,
     color: theme.palette.text.disabled,
-    padding: `${theme.spacing(1.5)}px 0`,
+    padding: `${theme.spacing(1.5)}px 0 ${theme.spacing(2)}px`,
   },
   iconButtonsContainer: {
     position: 'relative',
     left: -14,
   },
   iconButtons: {
-    color: theme.palette.text.primary,
+    color: theme.palette.primary.main,
     '&:hover': {
       backgroundColor: `${theme.palette.primary.light}33`,
     },
@@ -55,7 +50,7 @@ export const NewPost = () => {
     <Box className={classes.root}>
       <Box display='flex'>
         <Avatar className={classes.avatar} alt='User' />
-        <Box className={classes.content}>
+        <Box width='100%'>
           <Input
             className={classes.input}
             fullWidth

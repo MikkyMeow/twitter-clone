@@ -1,13 +1,21 @@
-import { makeStyles } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { NewPost } from 'components/elements/NewPost';
+import { Post } from 'components/elements/Post';
 import React from 'react';
 
-const useStyles = makeStyles((theme) => ({
-  root: {},
-}));
-
 export const HomePage = () => {
-  const classes = useStyles();
-
-  return <NewPost />;
+  return (
+    <Box>
+      <NewPost />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </Box>
+  );
 };
