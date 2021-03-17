@@ -1,4 +1,5 @@
 import {
+  Button,
   IconButton,
   List,
   ListItem,
@@ -17,9 +18,10 @@ import {
   TurnedInNotOutlined,
   Twitter,
 } from '@material-ui/icons';
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classnames from 'classnames';
+import { NewPostPopup } from 'components/popups/NewPostPopup';
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -56,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.dark,
     pointerEvents: 'none',
   },
+  createTweet: {
+    width: 225,
+  },
 }));
 
 interface INavItems {
@@ -67,7 +72,7 @@ interface INavItems {
 
 const Nav = () => {
   const classes = useStyles();
-
+  const [showPopup, setShowPopup] = useState(false);
   const navItems: INavItems[] = useMemo(
     () => [
       { label: 'Home', icon: <HomeOutlined />, to: '/home', isDisabled: false },
@@ -102,41 +107,60 @@ const Nav = () => {
     []
   );
 
+  const handleClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleClose = () => {
+    setShowPopup(false);
+  };
+
   return (
-    <List
-      component='nav'
-      subheader={
-        <Link to='/home'>
-          <IconButton className={classes.logo}>
-            <Twitter />
-          </IconButton>
-        </Link>
-      }
-    >
-      {navItems.map((item, index) => (
-        <NavLink
-          to={item.to}
-          className={classnames(
-            classes.navItem,
-            item.isDisabled && classes.disabled
-          )}
-          activeStyle={{ color: '#274A9D' }}
-        >
-          <ListItem
-            key={index}
-            button
-            disabled={item.isDisabled}
-            classes={{ root: classes.listItem, disabled: classes.disabled }}
+    <>
+      <List
+        component='nav'
+        subheader={
+          <Link to='/home'>
+            <IconButton className={classes.logo}>
+              <Twitter />
+            </IconButton>
+          </Link>
+        }
+      >
+        {navItems.map((item, index) => (
+          <NavLink
+            to={item.to}
+            className={classnames(
+              classes.navItem,
+              item.isDisabled && classes.disabled
+            )}
+            activeStyle={{ color: '#274A9D' }}
           >
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.navItemText }}
-              primary={item.label}
-            />
-          </ListItem>
-        </NavLink>
-      ))}
-    </List>
+            <ListItem
+              key={index}
+              button
+              disabled={item.isDisabled}
+              classes={{ root: classes.listItem, disabled: classes.disabled }}
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText
+                classes={{ primary: classes.navItemText }}
+                primary={item.label}
+              />
+            </ListItem>
+          </NavLink>
+        ))}
+      </List>
+      <Button
+        className={classes.createTweet}
+        variant='contained'
+        color='primary'
+        onClick={handleClick}
+      >
+        Tweet
+      </Button>
+      <NewPostPopup open={showPopup} onClose={handleClose} />
+    </>
   );
 };
 

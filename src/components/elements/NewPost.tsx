@@ -76,7 +76,7 @@ export const NewPost = () => {
                 <CalendarToday />
               </IconButton>
             </Box>
-            <Button variant='contained' color='primary' disabled>
+            <Button variant='contained' color='primary'>
               Tweet
             </Button>
           </Box>

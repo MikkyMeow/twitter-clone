@@ -59,19 +59,19 @@ export const themeOptions = {
     fontFamily: 'Roboto, sans-serif',
     fontSize: 14,
     h2: {
-      fontSize: 22,
+      fontSize: 20,
       fontWeight: 700,
     },
     h3: {
-      fontSize: 20,
+      fontSize: 18,
       fontWeight: 400,
     },
     h4: {
-      fontSize: 20,
+      fontSize: 18,
       fontWeight: 700,
     },
     h5: {
-      fontSize: 20,
+      fontSize: 18,
       fontWeight: 400,
       color: '#5B7082',
     },

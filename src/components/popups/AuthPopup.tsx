@@ -37,9 +37,9 @@ export const AuthPopup: React.FC<IProps> = ({
   const classes = useStyles();
 
   return (
-    <Dialog open={open} aria-labelledby='login-popup' onClose={onClose}>
+    <Dialog open={open} onClose={onClose}>
       <div className={classes.root}>
-        <DialogTitle className={classes.title} id='login-popup'>
+        <DialogTitle className={classes.title}>
           {isRegister ? 'Create yout account' : 'Log In'}
         </DialogTitle>
         <DialogContent>

@@ -15,7 +15,6 @@ export const HomePage = () => {
       <Post />
       <Post />
       <Post />
-      <Post />
     </Box>
   );
 };

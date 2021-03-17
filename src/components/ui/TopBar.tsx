@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: theme.spacing(2),
+    position: 'sticky',
+    top: 0,
+    backgroundColor: theme.palette.secondary.light,
   },
   icon: {
     color: theme.palette.primary.main,
